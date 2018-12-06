@@ -68,10 +68,12 @@ function videoScale(state = 0, action) {
 
 function users(state =[], action){
   if(action.type === "ADD_USER"){
-
+    // add user to new state array
+    return [...state, action.value];
   }
   if(action.type === "REMOVE_USER"){
-
+    // remove the last item from the array
+    return state.splice(0, state.length - 1);
   }
   return state;
 }
